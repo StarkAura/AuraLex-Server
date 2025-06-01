@@ -1,0 +1,27 @@
+### Onboard Student (POST)
+POST http://localhost:3000/api/onboarding/onboard
+Content-Type: application/json
+
+{
+  "fullName": "Student Info",
+  "email": "test@gmail.com",
+  "age": 25,
+  "learningPreferences": ["visual", "auditory"],
+  "readingDifficultyLevel": "mild",
+  "assistiveTechnologyUsed": "None",
+  "currentLevel": "Undergraduate",
+  "fieldOfInterest": "Computer Science",
+  "preferredLanguage": "English",
+  "contentFormat": ["video", "text"],
+  "hasStableInternet": true,
+  "deviceType": "Laptop",
+  "techFamiliarityLevel": "Intermediate",
+  "country": "NG",
+  "timeZone": "Africa/Lagos",
+  "whyLearning": "To upskill",
+  "shortTermGoal": "Finish onboarding",
+  "longTermGoal": "Become a developer",
+  "learningGoals": "Master web3 and AI",
+  "accessibilityNeeds": "None",
+  "web3Interests": ["blockchain", "NFTs"]
+}
