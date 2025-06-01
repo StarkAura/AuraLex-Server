@@ -1,4 +1,4 @@
-const students = [];
+const students = [1];
 
 class Student {
   constructor(data) {

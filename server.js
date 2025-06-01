@@ -13,9 +13,10 @@ app.use(express.json());
 
 // Import routes
 const onboardingRoutes = require('./routes/onboarding.route');
+const studentRoutes = require('./routes/onboarding_update.route');
 // Use routes
 app.use('/api/onboarding', onboardingRoutes);
-
+app.use('/api/students', studentRoutes);
 // Basic route
 app.get('/', (req, res) => {
   res.send('AuraLex Server is running!');
