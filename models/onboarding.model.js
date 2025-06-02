@@ -2,6 +2,7 @@ const students = [];
 
 class Student {
   constructor(data) {
+    this._id = Date.now().toString() + Math.random().toString(36).substr(2, 9); // Simple unique ID
     this.fullName = data.fullName;
     this.email = data.email;
     this.age = data.age;
