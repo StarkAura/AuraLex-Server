@@ -42,9 +42,9 @@ async function studentUpdate(req, res) {
       }
     }
 
-    //"For now, let's keep it like this because the student is not being created from the backend. I made the request using the ID, 
+    //"For now, let's keep it like this because the student is not being created from the backend. I made the request using the ID,
     // but later it will be fixed to  use s._id."
-    let student = students.find((s) => String(s) === String(studentId));
+    let student = students.find((s) => s._id === studentId);
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
@@ -59,9 +59,7 @@ async function studentUpdate(req, res) {
       .status(200)
       .json({ message: "Student updated successfully", updateFields });
   } catch (error) {
-    return res
-      .status(500)
-      .json(error.message);
+    return res.status(500).json(error.message);
   }
 }
 
