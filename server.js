@@ -8,9 +8,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 // Import routes
+// <<<<<<< feat/contribution-guide
+// const onboardingRoutes = require('./routes/onboarding.route');
+// const studentRoutes = require('./routes/onboarding_update');
+// =======
 const onboardingRoutes = require("./routes/onboarding.route");
 const studentUpdateRoutes = require("./routes/onboarding_update");
 const studentsFilterRoutes = require("./routes/onboarding_filtering");
+// >>>>>>> main
 // Use routes
 app.use("/api/onboarding", onboardingRoutes);
 app.use("/api/students", studentUpdateRoutes);
