@@ -7,14 +7,14 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(express.json());
 
-//
-
 // Import routes
 const onboardingRoutes = require("./routes/onboarding.route");
-const studentsRoutes = require("./routes/students.route");
+const studentUpdateRoutes = require("./routes/onboarding_update");
+const studentsFilterRoutes = require("./routes/onboarding_filtering");
 // Use routes
 app.use("/api/onboarding", onboardingRoutes);
-app.use("/api/students", studentsRoutes);
+app.use("/api/students", studentUpdateRoutes);
+app.use("/api/filtered_students", studentsFilterRoutes);
 
 // Basic route
 app.get("/", (req, res) => {

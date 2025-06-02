@@ -1,6 +1,6 @@
 const assert = require("assert");
 const { Student, students } = require("../models/onboarding.model");
-const { getStudents } = require("../controllers/onboarding");
+const { getFilteredStudents } = require("../controllers/onboarding");
 
 describe("Students Filtering", () => {
   beforeEach(() => {
@@ -59,7 +59,7 @@ describe("Students Filtering", () => {
         assert.strictEqual(data[0].fullName, "Alice Johnson");
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should filter students by age range", () => {
@@ -72,7 +72,7 @@ describe("Students Filtering", () => {
         assert(names.includes("Bob Smith"));
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should filter students by learning preferences", () => {
@@ -85,7 +85,7 @@ describe("Students Filtering", () => {
         assert(names.includes("Carol Davis"));
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should filter students by learning goals", () => {
@@ -96,7 +96,7 @@ describe("Students Filtering", () => {
         assert.strictEqual(data[0].fullName, "Alice Johnson");
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should filter students by multiple criteria", () => {
@@ -107,7 +107,7 @@ describe("Students Filtering", () => {
         assert.strictEqual(data[0].fullName, "Alice Johnson");
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should return empty array when no matches found", () => {
@@ -117,7 +117,7 @@ describe("Students Filtering", () => {
         assert.strictEqual(data.length, 0);
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should return all students when no filters applied", () => {
@@ -127,7 +127,7 @@ describe("Students Filtering", () => {
         assert.strictEqual(data.length, 3);
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 
   it("should handle invalid age gracefully", () => {
@@ -137,6 +137,6 @@ describe("Students Filtering", () => {
         assert.strictEqual(data.length, 3);
       },
     };
-    getStudents(req, res);
+    getFilteredStudents(req, res);
   });
 });
