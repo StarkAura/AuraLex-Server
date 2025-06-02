@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Import routes
 const onboardingRoutes = require('./routes/onboarding.route');
-const studentRoutes = require('./routes/onboarding_update.route');
+const studentRoutes = require('./routes/onboarding_update');
 // Use routes
 app.use('/api/onboarding', onboardingRoutes);
 app.use('/api/students', studentRoutes);
